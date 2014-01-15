@@ -50,9 +50,9 @@ That means seats 1-13 have been reserved. For now the carriage has 20 seats in r
 
 ###The challenge
 
-First you have to write the tests for Store.read, to learn RSpec
+First you have to write the tests for (Store.read)[spec/store_spec.rb], to learn RSpec
 
-Then you can improve reservation_service_spec.rb using RSpec.
+Then you can improve reservation_service_spec.rb[spec/reservation_service_spec.rb] using RSpec.
 
 
 
