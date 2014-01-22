@@ -18,7 +18,7 @@ To run the tests run
 
 	rspec
 
-it should show 7 passed tests if everything is installed correctly
+it shows 5 passed examples, if everything is installed correctly.
 
 ###How the application works
 
