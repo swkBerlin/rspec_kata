@@ -40,7 +40,7 @@ You will get a prompt, and it works like this:
 	Your reserved seat numbers are:
 	12,13 <-- your program calculates this
 	
-If you run the other script `list`, it will list all the seat numbers that are reserved, eg.
+If you run the other script `list`, it will list the 20 first seats that are reserved, eg.
 	
 	> ./list.rb
 	The following seats are reserved:
@@ -50,9 +50,9 @@ That means seats 1-13 have been reserved. For now the carriage has 20 seats in r
 
 ###The challenge
 
-First you have to write the tests for [Store.read](spec/store_spec.rb), to learn RSpec
+First improve [reservation_service_spec.rb](spec/reservation_service_spec.rb) using RSpec. Start with list_reservations and then refactor the tests for reservations.
 
-Then you can improve [reservation_service_spec.rb](spec/reservation_service_spec.rb) using RSpec.
+Then refactor [test_store.rb](spec/store_spec.rb)
 
 
 
