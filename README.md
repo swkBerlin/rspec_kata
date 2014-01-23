@@ -18,7 +18,12 @@ To run the tests run
 
 	rspec
 
-it shows 5 passed examples, if everything is installed correctly.
+if everything is installed correctly, you get
+
+	.....
+
+	Finished in 0.00657 seconds
+	5 examples, 0 failures
 
 ###How the application works
 
