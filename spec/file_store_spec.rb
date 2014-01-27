@@ -9,7 +9,7 @@ describe FileStore do
     file_store.reset
   end
 
-  after do
+  after(:all) do
     file_store.reset
   end
 
