@@ -1,4 +1,4 @@
-require 'store'
+require File.expand_path(File.dirname(__FILE__) + '/store')
 
 class ReservationService
 
@@ -8,7 +8,7 @@ class ReservationService
 
   def reserve(num_seats)
     old_seats = seats
-
+    
     newly_reserved_seats = []
     num_seats.times do |i|
       newly_reserved_seats << (old_seats.last.to_i + 1 + i)

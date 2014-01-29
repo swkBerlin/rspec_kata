@@ -66,10 +66,12 @@ However in this kata, you should focus more on the tests.
 
 First improve [reservation_service_spec.rb](spec/reservation_service_spec.rb) using RSpec. Start with list_reservations and then refactor the tests for reservations.
 
-Then refactor [test_store.rb](spec/store_spec.rb). There is sample code for the necessary mocking in the comments.
+Then refactor [store_spec.rb](spec/store_spec.rb). There is sample code for the necessary mocking in the comments.
 
 
+### Solution
 
+You can find a link to the solution in the issues (so that you do not peek too early ;-))
 
 
 
