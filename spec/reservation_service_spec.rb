@@ -1,39 +1,37 @@
-require "test/unit"
 require "./lib/reservation_service"
 
-class ReservationServiceTest < Test::Unit::TestCase
+describe ReservationService do
 
-  def setup
+  before do
     @service = ReservationService.new
-    @service.reset
+    @service.reset  
   end
 
-  def test_reserving_two_seats_in_empty_carriage
+  it "test_reserving_two_seats_in_empty_carriage" do
     reserved_seat_numbers = @service.reserve(2)
-    assert_equal [1,2], reserved_seat_numbers
+    reserved_seat_numbers.should == [1,2]
   end
 
-  def test_reserving_three_seats_in_empty_carriage
+  it "test_reserving_three_seats_in_empty_carriage" do
     reserved_seat_numbers = @service.reserve(3)
-    assert_equal [1,2,3], reserved_seat_numbers
+    reserved_seat_numbers.should == [1,2,3]
   end
 
-  def test_reserving_two_seats_in_non_empty_carriage
+  it "test_reserving_two_seats_in_non_empty_carriage" do
     @service.reserve(1)
     reserved_seat_numbers = @service.reserve(2)
 
-    assert_equal [2,3], reserved_seat_numbers
+    reserved_seat_numbers.should == [2,3]
   end
 
-  def test_listing_when_no_reservations
-    assert_equal [], @service.list_reserved(3)
+  it "test_listing_when_no_reservations" do
+    @service.list_reserved(3).should == []
   end
 
-  def test_listing_reservations
+  it "test_listing_reservations" do
     @service.reserve(1)
     @service.reserve(3)
 
-    assert_equal [1,2,3], @service.list_reserved(3)
+    @service.list_reserved(3).should == [1,2,3]
   end
-
 end
