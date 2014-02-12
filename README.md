@@ -18,19 +18,20 @@ To run the tests run
 
 if everything is installed correctly, you get
 
-	....
+	.........
 
-	Finished in 0.01621 seconds
-	4 examples, 0 failures
+	Finished in 0.01863 seconds
+	9 examples, 0 failures
 	Run options: 
 
 	# Running tests:
 
-	......
+	.
 
-	Finished tests in 0.010854s, 552.8162 tests/s, 644.9522 assertions/s.
+	Finished tests in 0.003802s, 263.0029 tests/s, 526.0057 assertions/s.
 
-	6 tests, 7 assertions, 0 failures, 0 errors, 0 skips
+	1 tests, 2 assertions, 0 failures, 0 errors, 0 skips
+
 
 ###How the application works
 
@@ -42,9 +43,46 @@ _As a Deutsche Bahn personnel, I want to get a list of the seats that are reserv
 
 You can not actually execute this application, because we want you to focus o n the tests. To see examples how it should work, look at the tests!
 
+### How your tests should look like
+
+We always follow the following pattern in structuring our tests, because this way they are easy to maintain, to extend and to read (in case of failure). It is inspired by [betterspecs.org](www.betterspecs.org)
+
+	describe Class do
+		let(:service) { Service.new}
+		let(:data) { "data" }
+
+		before do
+			#setup
+		end
+
+		describe "#method" do
+			subject { service.method }
+
+			it "returns nil" do # the default case
+				subject.should be_nil
+			end
+
+			context "some context is given" do
+				before do
+					#setup context
+				end
+
+				it "returns 2" do
+					subject.should == 2
+				end
+
+				it ...
+			end
+
+			context ...
+		end
+
+		describe ...
+	end
+
 ###The challenge
 
-First improve [reservation_service_spec.rb](spec/reservation_service_spec.rb) using RSpec. Start with list_reservations and then refactor the tests for reserve.
+First improve [reservation_service_spec.rb](spec/reservation_service_spec.rb) using RSpec. Start with list_reservations and then refactor the tests for reserve. To see how you should structure it, check [file_store_spec.rb](spec/file_store_spec.rb).
 
 Then refactor [store_spec.rb](spec/store_spec.rb). It is a test/unit test, so you have to port it to RSpec first. You will need mocking and there is sample code for the necessary mocking in the comments.
 
